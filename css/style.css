@@ -44,10 +44,21 @@ button { font: inherit; }
 .hero-art { position:relative; min-height:520px; display:grid; place-items:center; }
 .orb { position:absolute; border-radius:50%; }
 .orb-back { width:450px; height:450px; background:radial-gradient(circle,rgba(241,217,140,.18),rgba(215,173,82,.03) 55%,transparent 70%); filter:blur(3px); }
-.orb-main { position:relative; width:355px; height:355px; display:grid; place-items:center; border:1px solid rgba(241,217,140,.65); border-radius:50%; background:radial-gradient(circle at 40% 30%,#3c2b10,#100d08 60%,#050403); box-shadow:0 0 0 12px rgba(215,173,82,.04), 0 30px 90px rgba(0,0,0,.65), inset 0 0 70px rgba(215,173,82,.09); overflow:hidden; }
-.orb-main::before { content:""; position:absolute; inset:20px; border:1px solid rgba(241,217,140,.22); border-radius:50%; pointer-events:none; z-index:3; }
-.hero-logo { position:relative; z-index:2; display:block; width:76%; height:76%; max-width:none; max-height:none; object-fit:contain; object-position:center; filter:drop-shadow(0 10px 20px rgba(0,0,0,.45)); }
-.floating-card { position:absolute; z-index:4; padding:11px 15px; border:1px solid rgba(241,217,140,.28); background:rgba(14,12,9,.72); backdrop-filter:blur(12px); box-shadow:var(--shadow); color:var(--gold-light); font-size:18px; }
+.orb-main { position:relative; width:355px; height:355px; display:grid; place-items:center; border:1px solid rgba(241,217,140,.65); border-radius:50%; background:radial-gradient(circle at 40% 30%,#3c2b10,#100d08 60%,#050403); box-shadow:0 0 0 12px rgba(215,173,82,.04), 0 30px 90px rgba(0,0,0,.65), inset 0 0 70px rgba(215,173,82,.09); overflow:hidden; transition:box-shadow .45s ease, border-color .45s ease, transform .45s ease; }
+.orb-main::before { content:""; position:absolute; inset:20px; border:1px solid rgba(241,217,140,.22); border-radius:50%; pointer-events:none; z-index:3; transition:border-color .45s ease, box-shadow .45s ease; }
+.orb-main::after { content:""; position:absolute; inset:-3px; border:2px solid var(--gold-light); border-radius:50%; opacity:0; transform:scale(.94); pointer-events:none; z-index:4; }
+.hero-logo { position:relative; z-index:2; display:block; width:100%; height:100%; max-width:none; max-height:none; object-fit:contain; object-position:center; transform:scale(1.18); filter:drop-shadow(0 10px 20px rgba(0,0,0,.45)); transition:transform .55s cubic-bezier(.2,.8,.2,1), filter .45s ease; }
+.orb-main:hover { border-color:var(--gold-light); box-shadow:0 0 0 12px rgba(215,173,82,.08), 0 0 42px rgba(215,173,82,.25), 0 30px 90px rgba(0,0,0,.65), inset 0 0 70px rgba(215,173,82,.14); }
+.orb-main:hover::before { border-color:rgba(241,217,140,.55); box-shadow:0 0 18px rgba(215,173,82,.18); }
+.orb-main:hover::after { animation:orb-ring 1.8s ease-out infinite; }
+.orb-main:hover .hero-logo { transform:scale(1.24) translateY(-3px) rotate(1deg); filter:drop-shadow(0 12px 25px rgba(215,173,82,.22)); }
+@keyframes orb-ring {
+  0% { opacity:0; transform:scale(.94); }
+  25% { opacity:1; }
+  70% { opacity:.45; transform:scale(1.025); }
+  100% { opacity:0; transform:scale(1.07); }
+}
+.floating-card { position:absolute; z-index:5; padding:11px 15px; border:1px solid rgba(241,217,140,.28); background:rgba(14,12,9,.72); backdrop-filter:blur(12px); box-shadow:var(--shadow); color:var(--gold-light); font-size:18px; }
 .floating-card span { color:#e4ded3; font-size:11px; margin-left:7px; }
 .card-document { top:13%; left:3%; transform:rotate(-5deg); }
 .card-design { top:25%; right:2%; transform:rotate(5deg); }
@@ -132,7 +143,8 @@ button { font: inherit; }
   .hero { grid-template-columns:1fr; min-height:auto; padding-top:90px; }
   .hero-art { min-height:450px; margin-top:20px; }
   .orb-main { width:300px; height:300px; }
-  .hero-logo { width:76%; height:76%; }
+  .hero-logo { width:100%; height:100%; transform:scale(1.18); }
+  .orb-main:hover .hero-logo { transform:scale(1.24) translateY(-3px) rotate(1deg); }
   .identity-strip { flex-wrap:wrap; gap:8px 12px; font-size:16px; }
   .idea-section, .process-grid { grid-template-columns:1fr; }
   .idea-note { margin-top:20px; }
@@ -147,5 +159,6 @@ button { font: inherit; }
   .card-document { left:-2%; }
   .card-design { right:-2%; }
   .floating-card { font-size:15px; }
-  .hero-logo { width:72%; height:72%; }
+  .hero-logo { width:100%; height:100%; transform:scale(1.18); }
+  .orb-main:hover .hero-logo { transform:scale(1.24) translateY(-3px) rotate(1deg); }
 }
