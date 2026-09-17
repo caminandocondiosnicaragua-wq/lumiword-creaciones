@@ -1,69 +1,114 @@
-/* GALERÍA VISUAL — CURRÍCULUMS LUMIWORD */
-document.addEventListener('DOMContentLoaded', () => {
-  const grid=document.getElementById('styleGrid'); if(!grid)return;
-  if(!window.CURRICULUM_DESIGNS){
-    window.CURRICULUM_DESIGNS=[
-      ['Ejecutivo Clásico','Ejecutivo','split-gold',2,false],['Ejecutivo Moderno','Ejecutivo','dark-header',2,false],['Ejecutivo Dos Columnas','Ejecutivo','asymmetry',2,false],['Ejecutivo Premium','Ejecutivo','luxury-frame',2,false],['Ejecutivo Sobrio','Ejecutivo','ats-clean',1,true],
-      ['Corporativo Tradicional','Corporativo','navy-band',1,true],['Corporativo Moderno','Corporativo','side-accent',2,false],['Corporativo ATS','Corporativo','ats-column',1,true],['Corporativo Compacto','Corporativo','compact-grid',2,false],['Corporativo Internacional','Corporativo','international',2,false],
-      ['Académico Tradicional','Académico','academic-header',1,false],['Académico Investigador','Académico','research-timeline',1,false],['Académico Moderno','Académico','academic-split',2,false],['Académico Europeo','Académico','european',1,false],['Académico Detallado','Académico','academic-detailed',1,false],
-      ['Creativo Elegante','Creativo','creative-splash',2,false],['Creativo Moderno','Creativo','creative-dark',2,false],['Creativo Visual','Creativo','creative-vertical',2,false],['Creativo Editorial','Creativo','creative-editorial',2,false],['Creativo Profesional','Creativo','creative-frame',2,false],
-      ['Minimalista Clásico','Minimalista Premium','minimal-line',1,true],['Minimalista Moderno','Minimalista Premium','minimal-soft',1,true],['Minimalista Editorial','Minimalista Premium','minimal-editorial',1,true],['Minimalista Compacto','Minimalista Premium','minimal-botanical',1,true],['Minimalista Elegante','Minimalista Premium','minimal-premium',1,true]
-    ].map((x,i)=>({id:'TPL-'+String(Math.floor(i/5)+1).padStart(2,'0')+'-'+String(i%5+1).padStart(2,'0'),name:x[0],category:x[1],layout:x[2],columns:x[3],ats:x[4]}));
-  }
-  const typeButtons=document.querySelectorAll('#typeGrid .choice'), formatButtons=document.querySelectorAll('#formatGrid .choice'), sortSelect=document.getElementById('sortDesign'), count=document.getElementById('galleryCount');
-  let selectedType='todos',selectedFormat='todos';
+/* GALERÍA VISUAL DE CURRÍCULUMS — LUMIWORD CREACIONES */
+document.addEventListener("DOMContentLoaded", function () {
+  var grid = document.getElementById("styleGrid");
+  if (!grid) return;
 
-  function ejecutivoClasico(){return `<div class="cv-sample-window executive-classic-window"><div class="cv-real cv-executive-classic">
-    <aside class="ec-sidebar"><div class="ec-photo">FOTO</div><div class="ec-contact"><h6>CONTACTO</h6><p>+000 0000 0000</p><p>correo@ejemplo.com</p><p>Managua, Nicaragua</p><p>linkedin.com/perfil</p></div><div class="ec-block"><h6>HABILIDADES</h6><b>Gestión de proyectos</b><b>Liderazgo</b><b>Comunicación</b><b>Trabajo en equipo</b></div><div class="ec-block"><h6>IDIOMAS</h6><b>Español</b><small>Nativo</small><b>Inglés</b><small>Avanzado</small></div></aside>
-    <section class="ec-main"><header><div class="ec-name">NOMBRE<br>APELLIDO</div><div class="ec-role">DIRECTOR / PROFESIONAL</div></header><div class="ec-section"><h5>PERFIL PROFESIONAL</h5><p>Profesional orientado a resultados, con experiencia en gestión, coordinación y desarrollo de proyectos.</p></div><div class="ec-section"><h5>EXPERIENCIA PROFESIONAL</h5><article><strong>Gerente de Proyecto</strong><em>Empresa de ejemplo · 2022 — Actualidad</em><p>Coordinación de equipos, planificación y seguimiento de resultados.</p></article><article><strong>Coordinador Profesional</strong><em>Organización · 2019 — 2022</em><p>Gestión de procesos y cumplimiento de objetivos.</p></article></div><div class="ec-section"><h5>FORMACIÓN ACADÉMICA</h5><article><strong>Licenciatura / Especialidad</strong><em>Universidad de ejemplo · 2015 — 2019</em></article></div></section>
-  </div></div>`;}
+  var designs = window.CURRICULUM_DESIGNS || [];
+  var count = document.getElementById("galleryCount");
+  var typeButtons = document.querySelectorAll("#typeGrid .choice");
+  var formatButtons = document.querySelectorAll("#formatGrid .choice");
+  var sortSelect = document.getElementById("sortDesign");
+  var selectedType = "todos";
+  var selectedFormat = "todos";
 
-  function ejecutivoModerno(){return '<div class="cv-sample-window modern-window"><div class="cv-real cv-executive-modern"><header class="em-header"><div class="em-photo">FOTO</div><div class="em-name">NOMBRE<br><span>APELLIDO</span></div><div class="em-role">GERENCIA · DIRECCIÓN</div></header><div class="em-body"><aside><section><h6>CONTACTO</h6><p>+000 0000 0000</p><p>correo@ejemplo.com</p><p>Managua, Nicaragua</p></section><section><h6>COMPETENCIAS</h6><p>Liderazgo estratégico</p><p>Gestión de equipos</p><p>Planificación</p><p>Negociación</p></section><section><h6>IDIOMAS</h6><p>Español · Nativo</p><p>Inglés · Avanzado</p></section></aside><main><section><h5>PERFIL</h5><p>Profesional con experiencia en dirección, gestión de proyectos y desarrollo de equipos orientados a resultados.</p></section><section><h5>EXPERIENCIA</h5><article><strong>Directora de Operaciones</strong><small>Empresa de ejemplo · 2022 — Actualidad</small><p>Dirección de procesos, equipos y objetivos estratégicos.</p></article><article><strong>Gerente de Proyecto</strong><small>Organización · 2018 — 2022</small><p>Planificación y coordinación de proyectos.</p></article></section><section><h5>FORMACIÓN</h5><strong>Licenciatura / Especialidad</strong><small>Universidad de ejemplo · 2014 — 2018</small></section></main></div></div></div>';}
+  function sample(d) {
+    var photo = d.id === "TPL-01-05" || d.ats ? "" : '<div class="cv-photo-placeholder"><span>FOTO</span></div>';
+    var contact = '<div class="cv-mini-section"><b>CONTACTO</b><span>+000 0000 0000</span><span>correo@ejemplo.com</span><span>Managua, Nicaragua</span></div>';
+    var skills = '<div class="cv-mini-section"><b>HABILIDADES</b><span>Liderazgo</span><span>Comunicación</span><span>Gestión</span><span>Trabajo en equipo</span></div>';
+    var langs = '<div class="cv-mini-section"><b>IDIOMAS</b><span>Español · Nativo</span><span>Inglés · Avanzado</span></div>';
+    var profile = '<div class="cv-main-section"><h5>PERFIL PROFESIONAL</h5><p>Profesional orientado a resultados, experiencia y desarrollo de proyectos.</p></div>';
+    var exp = '<div class="cv-main-section"><h5>EXPERIENCIA</h5><strong>Profesional / Empresa</strong><small>2022 — Actualidad</small><p>Responsabilidades y logros profesionales.</p><strong>Especialista / Organización</strong><small>2019 — 2022</small></div>';
+    var edu = '<div class="cv-main-section"><h5>FORMACIÓN</h5><strong>Licenciatura / Especialidad</strong><small>Universidad de ejemplo · 2015 — 2019</small></div>';
+    var head = '<header class="cv-design-head"><div>' + photo + '<div class="cv-name">NOMBRE<br>APELLIDO</div><div class="cv-role">' + d.name.toUpperCase() + '</div></div></header>';
 
-
-  function ejecutivoDosColumnas(){return '<div class="cv-sample-window two-col-window"><div class="cv-real cv-executivo-two"><header class="e2-top"><div class="e2-name">NOMBRE<br>APELLIDO</div><div class="e2-role">CONSULTOR · EJECUTIVO</div><div class="e2-photo">FOTO</div></header><div class="e2-columns"><section class="e2-left"><div class="e2-block"><h6>PERFIL</h6><p>Ejecutivo orientado a resultados con experiencia en estrategia, dirección y desarrollo de negocios.</p></div><div class="e2-block"><h6>EXPERIENCIA</h6><article><strong>Director Comercial</strong><small>Empresa de ejemplo · 2021 — Actualidad</small><p>Estrategia comercial, liderazgo y crecimiento.</p></article><article><strong>Gerente de Operaciones</strong><small>Organización · 2017 — 2021</small><p>Gestión de equipos y procesos.</p></article></div></section><section class="e2-right"><div class="e2-block"><h6>CONTACTO</h6><p>+000 0000 0000</p><p>correo@ejemplo.com</p><p>Managua, Nicaragua</p></div><div class="e2-block"><h6>COMPETENCIAS</h6><p>Liderazgo</p><p>Estrategia</p><p>Negociación</p><p>Gestión de proyectos</p></div><div class="e2-block"><h6>FORMACIÓN</h6><strong>Maestría / Licenciatura</strong><small>Universidad de ejemplo</small></div><div class="e2-block"><h6>IDIOMAS</h6><p>Español · Nativo</p><p>Inglés · Avanzado</p></div></section></div></div></div>';}
-
-  function ejecutivoPremium(){return '<div class="cv-sample-window premium-window"><div class="cv-real cv-executive-premium"><div class="ep-frame"><header class="ep-head"><div class="ep-kicker">EXECUTIVE CURRICULUM</div><div class="ep-name">NOMBRE<br><span>APELLIDO</span></div><div class="ep-role">DIRECCIÓN · ESTRATEGIA · LIDERAZGO</div><div class="ep-photo">FOTO</div></header><div class="ep-content"><section><h6>PERFIL EJECUTIVO</h6><p>Líder profesional con trayectoria en gestión estratégica, desarrollo de equipos y dirección de proyectos.</p><h6>TRAYECTORIA</h6><article><strong>Directora de Operaciones</strong><small>Empresa de ejemplo · 2021 — Actualidad</small><p>Dirección de equipos, procesos y objetivos corporativos.</p></article><article><strong>Gerente de Proyectos</strong><small>Organización · 2017 — 2021</small><p>Planificación, negociación y resultados.</p></article><h6>FORMACIÓN</h6><strong>Maestría en Administración</strong><small>Universidad de ejemplo · 2015</small></section><aside><div class="ep-side-title">DATOS</div><p>+000 0000 0000</p><p>correo@ejemplo.com</p><p>Managua, Nicaragua</p><div class="ep-side-title">FORTALEZAS</div><p>Liderazgo</p><p>Visión estratégica</p><p>Negociación</p><p>Gestión</p><div class="ep-side-title">IDIOMAS</div><p>Español · Nativo</p><p>Inglés · Avanzado</p></aside></div></div></div></div>';}
-  function common(cls,header,body){return '<div class="cv-sample-window"><div class="cv-real '+cls+'">'+header+body+'</div></div>';}
-  function genericSample(d){
-    const p='<div class="cv-photo-placeholder"><span>FOTO</span></div>';
-    const contact='<div class="cv-mini-section"><b>CONTACTO</b><span>+000 0000 0000</span><span>correo@ejemplo.com</span><span>Managua, Nicaragua</span></div>';
-    const skills='<div class="cv-mini-section"><b>HABILIDADES</b><span>Liderazgo</span><span>Comunicación</span><span>Gestión</span><span>Trabajo en equipo</span></div>';
-    const langs='<div class="cv-mini-section"><b>IDIOMAS</b><span>Español · Nativo</span><span>Inglés · Avanzado</span></div>';
-    const exp='<div class="cv-main-section"><h5>EXPERIENCIA</h5><strong>Profesional / Empresa</strong><small>2022 — Actualidad</small><p>Logros y responsabilidades profesionales de ejemplo.</p><strong>Especialista / Organización</strong><small>2019 — 2022</small></div>';
-    const edu='<div class="cv-main-section"><h5>FORMACIÓN</h5><strong>Licenciatura / Especialidad</strong><small>Universidad de ejemplo · 2015 — 2019</small></div>';
-    const profile='<div class="cv-main-section"><h5>PERFIL PROFESIONAL</h5><p>Perfil de ejemplo orientado a resultados, experiencia y valor profesional.</p></div>';
-    const common=(cl,head,body)=>'<div class="cv-sample-window"><div class="cv-sheet '+cl+'">'+head+body+'</div></div>';
-    switch(d.layout){
-      case 'split-gold': return common('layout-split-gold','<header class="cv-design-head gold"><div>'+p+'<div class="cv-name">NOMBRE<br>APELLIDO</div><div class="cv-role">DIRECTOR / PROFESIONAL</div></div></header>','<div class="cv-design-columns"><aside>'+contact+skills+langs+'</aside><article>'+profile+exp+edu+'</article></div>');
-      case 'dark-header': return common('layout-dark-header','<header class="cv-design-dark">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">CARGO PROFESIONAL</div></header>','<div class="cv-design-columns reverse"><article>'+profile+exp+edu+'</article><aside>'+contact+skills+'</aside></div>');
-      case 'asymmetry': return common('layout-asymmetry','<header class="cv-design-asym">'+p+'<div><div class="cv-name">NOMBRE<br>APELLIDO</div><div class="cv-role">PROFESIÓN</div></div></header>','<div class="cv-asym-body"><div>'+profile+exp+'</div><aside>'+contact+skills+langs+'</aside></div>');
-      case 'luxury-frame': return common('layout-luxury-frame','<header class="cv-design-lux">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">EXECUTIVE PROFILE</div></header>','<div class="cv-lux-body">'+profile+exp+edu+'</div>');
-      case 'ats-clean': return common('layout-ats-clean','<header class="cv-design-ats"><div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESIÓN / CARGO</div></header>','<div class="cv-ats-body">'+profile+exp+edu+skills+'</div>');
-      case 'navy-band': return common('layout-navy-band','<header class="cv-band navy">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">CARGO PROFESIONAL</div></header>','<div class="cv-band-grid"><aside>'+contact+skills+'</aside><article>'+profile+exp+edu+'</article></div>');
-      case 'side-accent': return common('layout-side-accent','<header class="cv-design-side">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESIÓN</div></header>','<div class="cv-side-grid"><aside>'+contact+langs+'</aside><article>'+profile+exp+edu+'</article></div>');
-      case 'ats-column': return common('layout-ats-column','<header class="cv-design-ats centered"><div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">ESPECIALISTA PROFESIONAL</div></header>','<div class="cv-ats-body compact">'+profile+exp+skills+edu+'</div>');
-      case 'compact-grid': return common('layout-compact-grid','<header class="cv-design-compact">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESIONAL</div></header>','<div class="cv-compact-grid"><div>'+profile+exp+'</div><aside>'+contact+skills+edu+'</aside></div>');
-      case 'international': return common('layout-international','<header class="cv-design-international"><div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESSIONAL · INTERNATIONAL</div>'+p+'</header>','<div class="cv-design-columns"><aside>'+contact+langs+skills+'</aside><article>'+profile+exp+edu+'</article></div>');
-      case 'academic-header': return common('layout-academic-header','<header class="cv-design-academic">'+p+'<div><div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">DOCENTE · INVESTIGADOR</div></div></header>','<div class="cv-academic-content">'+profile+edu+exp+'</div>');
-      case 'research-timeline': return common('layout-research-timeline','<header class="cv-design-research"><div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">INVESTIGADOR</div></header>','<div class="cv-research-grid"><aside>'+contact+langs+'</aside><article><div class="timeline">'+exp+'</div><div class="cv-main-section"><h5>PUBLICACIONES</h5><p>Artículos, congresos y producción académica.</p></div></article></div>');
-      case 'academic-split': return common('layout-academic-split','<header class="cv-design-academic split">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESOR UNIVERSITARIO</div></header>','<div class="cv-design-columns academic-columns"><aside>'+contact+langs+'</aside><article>'+edu+exp+profile+'</article></div>');
-      case 'european': return common('layout-european','<header class="cv-design-european"><div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">CURRICULUM VITAE</div>'+p+'</header>','<div class="cv-european-body">'+profile+exp+edu+langs+'</div>');
-      case 'academic-detailed': return common('layout-academic-detailed','<header class="cv-design-detailed">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PERFIL ACADÉMICO</div></header>','<div class="cv-detailed-grid"><aside>'+contact+langs+'</aside><article>'+edu+'<div class="cv-main-section"><h5>INVESTIGACIÓN Y PUBLICACIONES</h5><p>Líneas de investigación, publicaciones y proyectos.</p></div>'+exp+'</article></div>');
-      case 'creative-splash': return common('layout-creative-splash','<header class="cv-creative-splash">'+p+'<div class="cv-name">NOMBRE<br>APELLIDO</div><div class="cv-role">DISEÑADOR / CREADOR</div></header>','<div class="cv-design-columns creative-columns"><aside>'+contact+skills+'</aside><article>'+profile+exp+edu+'</article></div>');
-      case 'creative-dark': return common('layout-creative-dark','<header class="cv-creative-dark">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">CREATIVE PROFESSIONAL</div></header>','<div class="cv-design-columns dark-columns"><aside>'+contact+skills+langs+'</aside><article>'+profile+exp+edu+'</article></div>');
-      case 'creative-vertical': return common('layout-creative-vertical','<header class="cv-creative-vertical"><div class="cv-name">NOMBRE<br>APELLIDO</div><div class="cv-role">DISEÑADOR</div></header>','<div class="cv-vertical-body">'+p+'<div>'+profile+exp+edu+'</div><aside>'+contact+skills+'</aside></div>');
-      case 'creative-editorial': return common('layout-creative-editorial','<header class="cv-editorial"><div class="cv-role">PORTFOLIO · CURRÍCULUM</div><div class="cv-name">NOMBRE APELLIDO</div>'+p+'</header>','<div class="cv-editorial-body"><article>'+profile+exp+edu+'</article><aside>'+contact+skills+langs+'</aside></div>');
-      case 'creative-frame': return common('layout-creative-frame','<header class="cv-creative-frame">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESIONAL CREATIVO</div></header>','<div class="cv-frame-body">'+profile+exp+edu+'</div>');
-      case 'minimal-line': return common('layout-minimal-line','<header class="cv-min-head"><div><div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESIÓN / CARGO</div></div>'+p+'</header>','<div class="cv-min-body">'+profile+exp+edu+skills+'</div>');
-      case 'minimal-soft': return common('layout-minimal-soft','<header class="cv-min-soft">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESIÓN</div></header>','<div class="cv-min-body two">'+profile+exp+edu+'</div>');
-      case 'minimal-editorial': return common('layout-minimal-editorial','<header class="cv-min-editorial"><div class="cv-role">CURRICULUM VITAE</div><div class="cv-name">NOMBRE APELLIDO</div></header>','<div class="cv-min-body">'+profile+exp+edu+langs+'</div>');
-      case 'minimal-botanical': return common('layout-minimal-botanical','<header class="cv-min-botanical">'+p+'<div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESIÓN / CARGO</div></header>','<div class="cv-min-body">'+profile+exp+edu+'</div>');
-      default: return common('layout-minimal-premium','<header class="cv-min-premium"><div class="cv-name">NOMBRE APELLIDO</div><div class="cv-role">PROFESIÓN</div>'+p+'</header>','<div class="cv-min-body">'+profile+exp+edu+'</div>');
+    if (d.id === "TPL-01-01") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-executive-classic"><aside class="ec-sidebar"><div class="ec-photo">FOTO</div>' + contact + skills + langs + '</aside><section class="ec-main"><header><div class="ec-name">NOMBRE<br>APELLIDO</div><div class="ec-role">DIRECTOR / PROFESIONAL</div></header>' + profile + exp + edu + '</section></div></div>';
     }
+    if (d.id === "TPL-01-02") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-executive-modern"><header class="em-header"><div class="em-photo">FOTO</div><div class="em-name">NOMBRE<br><span>APELLIDO</span></div><div class="em-role">GERENCIA · DIRECCIÓN</div></header><div class="em-body"><aside>' + contact + skills + langs + '</aside><main>' + profile + exp + edu + '</main></div></div></div>';
+    }
+    if (d.id === "TPL-01-03") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-executivo-two"><header class="e2-top"><div class="e2-name">NOMBRE<br>APELLIDO</div><div class="e2-role">CONSULTOR · EJECUTIVO</div><div class="e2-photo">FOTO</div></header><div class="e2-columns"><section class="e2-left">' + profile + exp + '</section><section class="e2-right">' + contact + skills + edu + langs + '</section></div></div></div>';
+    }
+    if (d.id === "TPL-01-04") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-executive-premium"><div class="ep-frame"><header class="ep-head"><div class="ep-kicker">EXECUTIVE CURRICULUM</div><div class="ep-name">NOMBRE<br><span>APELLIDO</span></div><div class="ep-role">DIRECCIÓN · ESTRATEGIA</div><div class="ep-photo">FOTO</div></header><div class="ep-content"><section>' + profile + exp + edu + '</section><aside>' + contact + skills + langs + '</aside></div></div></div></div>';
+    }
+
+    var layouts = {
+      "split-gold":"layout-split-gold", "dark-header":"layout-dark-header", "asymmetry":"layout-asymmetry",
+      "luxury-frame":"layout-luxury-frame", "ats-clean":"layout-ats-clean", "navy-band":"layout-navy-band",
+      "side-accent":"layout-side-accent", "ats-column":"layout-ats-column", "compact-grid":"layout-compact-grid",
+      "international":"layout-international", "academic-header":"layout-academic-header", "research-timeline":"layout-research-timeline",
+      "academic-split":"layout-academic-split", "european":"layout-european", "academic-detailed":"layout-academic-detailed",
+      "creative-splash":"layout-creative-splash", "creative-dark":"layout-creative-dark", "creative-vertical":"layout-creative-vertical",
+      "creative-editorial":"layout-creative-editorial", "creative-frame":"layout-creative-frame", "minimal-line":"layout-minimal-line",
+      "minimal-soft":"layout-minimal-soft", "minimal-editorial":"layout-minimal-editorial", "minimal-botanical":"layout-minimal-botanical",
+      "minimal-premium":"layout-minimal-premium"
+    };
+    var cls = layouts[d.layout] || "layout-minimal-premium";
+    var body = d.columns === 2
+      ? '<div class="cv-design-columns"><aside>' + contact + skills + langs + '</aside><article>' + profile + exp + edu + '</article></div>'
+      : '<div class="cv-ats-body">' + profile + exp + edu + skills + '</div>';
+    return '<div class="cv-sample-window"><div class="cv-sheet ' + cls + '">' + head + body + '</div></div>';
   }
-  function matches(d){const typeOk=selectedType==='todos'||d.category.toLowerCase().includes(selectedType)||(selectedType==='primer-empleo'&&d.name.toLowerCase().includes('primer'));const formatOk=selectedFormat==='todos'||(selectedFormat==='one-column'&&d.columns===1)||(selectedFormat==='two-columns'&&d.columns===2)||(selectedFormat==='ats'&&d.ats);return typeOk&&formatOk;}
-  function render(){let designs=window.CURRICULUM_DESIGNS.filter(matches).slice();if(sortSelect?.value==='name')designs.sort((a,b)=>a.name.localeCompare(b.name));if(sortSelect?.value==='category')designs.sort((a,b)=>a.category.localeCompare(b.category));if(count)count.textContent=`${designs.length} ${designs.length===1?'diseño':'diseños'}`;grid.innerHTML=designs.map(d=>`<article class="market-card ${d.id==='TPL-01-01'?'design-01-card':''}" data-design="${d.id}">${d.id==='TPL-01-01'?ejecutivoClasico():d.id==='TPL-01-02'?ejecutivoModerno():d.id==='TPL-01-03'?ejecutivoDosColumnas():d.id==='TPL-01-04'?ejecutivoPremium():genericSample(d)}<div class="market-card-info"><button class="heart" type="button" aria-label="Guardar diseño">♡</button><h3>${d.name}</h3><div class="tags"><span>${d.category}</span><span>${d.columns===1?'Una columna':'Dos columnas'}</span>${d.ats?'<span>ATS</span>':''}</div><button class="use-design" type="button">Usar este diseño <b>→</b></button></div></article>`).join('');}
-  function setButtons(buttons,value){buttons.forEach(b=>b.classList.toggle('active',b.dataset.type===value||b.dataset.format===value));}
-  typeButtons.forEach(b=>b.addEventListener('click',()=>{selectedType=b.dataset.type;setButtons(typeButtons,selectedType);render();}));formatButtons.forEach(b=>b.addEventListener('click',()=>{selectedFormat=b.dataset.format;setButtons(formatButtons,selectedFormat);render();}));sortSelect?.addEventListener('change',render);grid.addEventListener('click',e=>{const use=e.target.closest('.use-design');if(!use)return;const card=use.closest('.market-card');localStorage.setItem('lumiword_cv_diseno_seleccionado',card.dataset.design);const form=document.getElementById('preguntas');if(form){form.hidden=false;form.scrollIntoView({behavior:'smooth',block:'start');}}});render();
+
+  function render() {
+    var list = designs.filter(function (d) {
+      var typeOK = selectedType === "todos" || d.category.toLowerCase() === selectedType.toLowerCase();
+      var formatOK = selectedFormat === "todos" ||
+        (selectedFormat === "one-column" && d.columns === 1) ||
+        (selectedFormat === "two-columns" && d.columns === 2) ||
+        (selectedFormat === "ats" && d.ats);
+      return typeOK && formatOK;
+    });
+
+    if (sortSelect && sortSelect.value === "name") list.sort(function(a,b){ return a.name.localeCompare(b.name); });
+    if (sortSelect && sortSelect.value === "category") list.sort(function(a,b){ return a.category.localeCompare(b.category); });
+
+    if (count) count.textContent = list.length + (list.length === 1 ? " diseño" : " diseños");
+
+    grid.innerHTML = list.map(function (d) {
+      return '<article class="market-card" data-design="' + d.id + '">' +
+        sample(d) +
+        '<div class="market-card-info"><button class="heart" type="button" aria-label="Guardar diseño">♡</button>' +
+        '<h3>' + d.name + '</h3><div class="tags"><span>' + d.category + '</span><span>' +
+        (d.columns === 1 ? "Una columna" : "Dos columnas") + '</span>' +
+        (d.ats ? '<span>ATS</span>' : '') + '</div>' +
+        '<button class="use-design" type="button">Usar este diseño <b>→</b></button></div></article>';
+    }).join("");
+  }
+
+  typeButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      selectedType = button.getAttribute("data-type");
+      typeButtons.forEach(function(b){ b.classList.remove("active"); });
+      button.classList.add("active");
+      render();
+    });
+  });
+
+  formatButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      selectedFormat = button.getAttribute("data-format");
+      formatButtons.forEach(function(b){ b.classList.remove("active"); });
+      button.classList.add("active");
+      render();
+    });
+  });
+
+  if (sortSelect) sortSelect.addEventListener("change", render);
+
+  grid.addEventListener("click", function (event) {
+    var button = event.target.closest(".use-design");
+    if (!button) return;
+    var card = button.closest(".market-card");
+    localStorage.setItem("lumiword_cv_diseno_seleccionado", card.getAttribute("data-design"));
+    var form = document.getElementById("preguntas");
+    if (form) {
+      form.hidden = false;
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+
+  render();
 });
