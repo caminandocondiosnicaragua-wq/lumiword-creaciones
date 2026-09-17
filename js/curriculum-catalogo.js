@@ -1,6 +1,15 @@
 /* GALERÍA VISUAL — CURRÍCULUMS LUMIWORD */
 document.addEventListener('DOMContentLoaded', () => {
-  const grid=document.getElementById('styleGrid'); if(!grid||!window.CURRICULUM_DESIGNS)return;
+  const grid=document.getElementById('styleGrid'); if(!grid)return;
+  if(!window.CURRICULUM_DESIGNS){
+    window.CURRICULUM_DESIGNS=[
+      ['Ejecutivo Clásico','Ejecutivo','split-gold',2,false],['Ejecutivo Moderno','Ejecutivo','dark-header',2,false],['Ejecutivo Dos Columnas','Ejecutivo','asymmetry',2,false],['Ejecutivo Premium','Ejecutivo','luxury-frame',2,false],['Ejecutivo Sobrio','Ejecutivo','ats-clean',1,true],
+      ['Corporativo Tradicional','Corporativo','navy-band',1,true],['Corporativo Moderno','Corporativo','side-accent',2,false],['Corporativo ATS','Corporativo','ats-column',1,true],['Corporativo Compacto','Corporativo','compact-grid',2,false],['Corporativo Internacional','Corporativo','international',2,false],
+      ['Académico Tradicional','Académico','academic-header',1,false],['Académico Investigador','Académico','research-timeline',1,false],['Académico Moderno','Académico','academic-split',2,false],['Académico Europeo','Académico','european',1,false],['Académico Detallado','Académico','academic-detailed',1,false],
+      ['Creativo Elegante','Creativo','creative-splash',2,false],['Creativo Moderno','Creativo','creative-dark',2,false],['Creativo Visual','Creativo','creative-vertical',2,false],['Creativo Editorial','Creativo','creative-editorial',2,false],['Creativo Profesional','Creativo','creative-frame',2,false],
+      ['Minimalista Clásico','Minimalista Premium','minimal-line',1,true],['Minimalista Moderno','Minimalista Premium','minimal-soft',1,true],['Minimalista Editorial','Minimalista Premium','minimal-editorial',1,true],['Minimalista Compacto','Minimalista Premium','minimal-botanical',1,true],['Minimalista Elegante','Minimalista Premium','minimal-premium',1,true]
+    ].map((x,i)=>({id:'TPL-'+String(Math.floor(i/5)+1).padStart(2,'0')+'-'+String(i%5+1).padStart(2,'0'),name:x[0],category:x[1],layout:x[2],columns:x[3],ats:x[4]}));
+  }
   const typeButtons=document.querySelectorAll('#typeGrid .choice'), formatButtons=document.querySelectorAll('#formatGrid .choice'), sortSelect=document.getElementById('sortDesign'), count=document.getElementById('galleryCount');
   let selectedType='todos',selectedFormat='todos';
 
