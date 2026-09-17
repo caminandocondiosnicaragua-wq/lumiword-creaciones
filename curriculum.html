@@ -1,69 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Crea tu currículum en LumiWord Creaciones. Elige el tipo de CV, compara estilos, selecciona una plantilla y responde las preguntas para construir tu documento.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crea tu currículum en LumiWord Creaciones. Elige tipo, formato y diseño antes de personalizarlo.">
   <title>Currículum | LumiWord Creaciones</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/curriculum.css">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/curriculum.css">
 </head>
 <body>
-  <header class="site-header" id="inicio">
-    <a class="brand" href="index.html" aria-label="LumiWord Creaciones, inicio"><span class="brand-mark">L</span><span><strong>LumiWord</strong><small>Creaciones</small></span></a>
-    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="main-nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a><a href="editorial.html">Editorial</a><a class="active" href="plantillas.html">Crear documentos</a><a href="index.html#investigacion">Investigación y creación</a><a href="index.html#servicios">Servicios profesionales</a><a href="index.html#faq">Preguntas frecuentes</a><a href="index.html#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <main class="cv-builder">
-    <section class="cv-hero">
-      <div>
-        <p class="eyebrow">LUMIWORD · CURRÍCULUM</p>
-        <h1>Construye tu<br><span>currículum.</span></h1>
-        <p>Primero cuéntanos qué tipo de currículum necesitas. Después podrás comparar los estilos disponibles y elegir la plantilla que mejor represente tu perfil.</p>
-      </div>
-      <div class="cv-hero-side"><strong>Tu información primero.</strong><span>El diseño después.</span><small>No tendrás que escribir tus datos nuevamente si cambias de plantilla.</small></div>
-    </section>
-
-    <section class="builder-section" id="tipo-cv">
-      <div class="builder-heading"><div><p class="eyebrow">PASO 01</p><h2>¿Qué tipo de currículum necesitas?</h2></div><p>Selecciona una opción para que las preguntas y la estructura del documento se adapten a tu situación.</p></div>
-      <div class="type-grid" id="typeGrid">
-        <button class="type-card" type="button" data-type="profesional"><span>01</span><b>Currículum profesional</b><small>Para personas con experiencia laboral y trayectoria profesional.</small></button>
-        <button class="type-card" type="button" data-type="ejecutivo"><span>02</span><b>Currículum ejecutivo</b><small>Para perfiles con liderazgo, dirección y responsabilidades de alto nivel.</small></button>
-        <button class="type-card" type="button" data-type="primer-empleo"><span>03</span><b>Primer empleo</b><small>Para destacar formación, prácticas, proyectos, voluntariado y habilidades.</small></button>
-        <button class="type-card" type="button" data-type="academico"><span>04</span><b>Currículum académico</b><small>Para formación, investigación, publicaciones, reconocimientos y trayectoria académica.</small></button>
-      </div>
-    </section>
-
-    <section class="builder-section styles-section is-locked" id="estilos">
-      <div class="builder-heading"><div><p class="eyebrow">PASO 02</p><h2>Ahora elige tu estilo.</h2></div><p>Compara los diseños antes de comenzar a responder. La plantilla solo define la presentación; tus datos siguen siendo tuyos.</p></div>
-      <div class="selected-type" id="selectedType">Selecciona primero el tipo de currículum.</div>
-      <div class="style-grid" id="styleGrid">
-        <button class="style-card" type="button" data-style="ejecutivo"><div class="style-preview style-executivo"><i></i><b>NOMBRE</b><span>PERFIL PROFESIONAL</span><em></em><em></em><em></em></div><strong>Ejecutivo</strong><small>Jerarquía visual marcada y presencia profesional.</small></button>
-        <button class="style-card" type="button" data-style="corporativo"><div class="style-preview style-corporativo"><i></i><b>NOMBRE COMPLETO</b><span>CARGO / PROFESIÓN</span><em></em><em></em><em></em></div><strong>Corporativo</strong><small>Ordenado, sobrio y pensado para entornos empresariales.</small></button>
-        <button class="style-card" type="button" data-style="academico"><div class="style-preview style-academico"><i></i><b>NOMBRE</b><span>FORMACIÓN Y TRAYECTORIA</span><em></em><em></em><em></em></div><strong>Académico</strong><small>Espacio para formación, investigación y trayectoria.</small></button>
-        <button class="style-card" type="button" data-style="creativo"><div class="style-preview style-creativo"><i></i><b>NOMBRE</b><span>CREATIVO · PROFESIONAL</span><em></em><em></em><em></em></div><strong>Creativo</strong><small>Una presentación con mayor personalidad visual.</small></button>
-        <button class="style-card" type="button" data-style="minimalista"><div class="style-preview style-minimalista"><i></i><b>NOMBRE COMPLETO</b><span>PROFESIÓN</span><em></em><em></em><em></em></div><strong>Minimalista Premium</strong><small>Espacios limpios y una lectura elegante.</small></button>
-      </div>
-    </section>
-
-    <section class="builder-section questions-section is-locked" id="preguntas">
-      <div class="builder-heading"><div><p class="eyebrow">PASO 03</p><h2>Cuéntanos sobre ti.</h2></div><p>Las preguntas cambian según el tipo de currículum que elegiste. No necesitas saber cómo redactar el CV: responde con tus propias palabras.</p></div>
-      <div class="question-intro" id="questionIntro"><strong>Elige un estilo para comenzar.</strong><span>Aquí aparecerá un formulario adaptado a tu tipo de currículum.</span></div>
-      <form id="cvForm" class="cv-form" novalidate></form>
-      <div class="form-actions" id="formActions" hidden><button class="btn btn-outline" type="button" id="backToStyles">Cambiar estilo</button><button class="btn btn-gold" type="button" id="saveDraft">Guardar avance</button><button class="btn btn-gold" type="button" id="continuePreview">Continuar a previsualización</button></div>
-    </section>
-
-    <section class="cv-security-note"><div><span>◈</span><strong>Tu información se mantiene separada del diseño.</strong><p>Podrás cambiar de plantilla sin volver a contestar el formulario. La previsualización llevará una marca de agua antes del pago.</p></div><a href="plantillas.html">Volver a servicios →</a></section>
-  </main>
-
-  <footer class="site-footer"><div><strong>LumiWord Creaciones</strong><p>Inspiración · Creación · Propósito</p></div><div class="footer-links"><a href="index.html">Inicio</a><a href="editorial.html">Editorial</a><a href="plantillas.html">Crear documentos</a><a href="index.html#contacto">Contacto</a></div><p class="copyright">© <span id="year"></span> LumiWord Creaciones. Todos los derechos reservados.</p></footer>
-  <script src="js/app.js"></script>
-  <script src="js/curriculum.js"></script>
-</body>
-</html>
+<header class="site-header" id="inicio">
+<a class="brand" href="index.html" aria-label="LumiWord Creaciones, inicio"><span class="brand-mark">L</span><span><strong>LumiWord</strong><small>Creaciones</small></span></a>
+<button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="editorial.html">Editorial</a><a class="active" href="plantillas.html">Plantillas</a><a href="index.html#investigacion">Investigación y creación</a><a href="index.html#servicios">Servicios profesionales</a><a href="index.html#faq">Preguntas frecuentes</a><a href="index.html#contacto">Contacto</a></nav>
+</header>
+<main class="cv-builder">
+<section class="cv-hero"><div><p class="eyebrow">LUMIWORD · CURRÍCULUM</p><h1>Construye tu<br><span>currículum.</span></h1><p>Define el propósito, la estructura y el diseño. Después introducirás tus datos en un formulario adaptado.</p></div><div class="cv-hero-side"><strong>Tu información primero.</strong><span>El diseño después.</span><small>Podrás cambiar de diseño sin volver a escribir tus datos.</small></div></section>
+<section class="builder-section" id="tipo-cv"><div class="builder-heading"><div><p class="eyebrow">PASO 01</p><h2>¿Qué tipo de currículum necesitas?</h2></div><p>Elige el propósito que mejor describe tu situación.</p></div><div class="type-grid" id="typeGrid">
+<button class="type-card" type="button" data-type="profesional"><span>01</span><b>Profesional</b><small>Experiencia laboral y trayectoria profesional.</small></button>
+<button class="type-card" type="button" data-type="ejecutivo"><span>02</span><b>Ejecutivo</b><small>Liderazgo, dirección y gestión.</small></button>
+<button class="type-card" type="button" data-type="primer-empleo"><span>03</span><b>Primer empleo</b><small>Formación, proyectos, prácticas y habilidades.</small></button>
+<button class="type-card" type="button" data-type="academico"><span>04</span><b>Académico</b><small>Formación, investigación, publicaciones y trayectoria.</small></button>
+</div></section>
+<section class="builder-section format-section is-locked" id="formatos"><div class="builder-heading"><div><p class="eyebrow">PASO 02</p><h2>Elige el formato.</h2></div><p>La estructura organiza la información sin cambiar tus datos.</p></div><div class="selected-type" id="selectedFormat">Selecciona primero el tipo de currículum.</div><div class="format-grid" id="formatGrid">
+<button type="button" class="format-card" data-format="Cronológico inverso"><strong>Cronológico inverso</strong><small>Lo más reciente aparece primero.</small></button><button type="button" class="format-card" data-format="Cronológico"><strong>Cronológico</strong><small>Trayectoria en secuencia temporal.</small></button><button type="button" class="format-card" data-format="Funcional"><strong>Funcional</strong><small>Prioriza habilidades y competencias.</small></button><button type="button" class="format-card" data-format="Combinado"><strong>Combinado</strong><small>Integra competencias y experiencia.</small></button><button type="button" class="format-card" data-format="Académico"><strong>Académico</strong><small>Prioriza formación, investigación y méritos.</small></button><button type="button" class="format-card" data-format="ATS"><strong>ATS</strong><small>Estructura sencilla para sistemas de selección.</small></button>
+</div></section>
+<section class="builder-section styles-section is-locked" id="estilos"><div class="builder-heading"><div><p class="eyebrow">PASO 03</p><h2>Ahora elige tu diseño.</h2></div><p>Compara diseños reales antes de comenzar a responder. El catálogo crecerá sin perder tus datos.</p></div><div class="selected-type" id="selectedType">Selecciona primero el tipo y el formato.</div><div class="style-grid" id="styleGrid"></div></section>
+<section class="builder-section questions-section is-locked" id="preguntas"><div class="builder-heading"><div><p class="eyebrow">PASO 04</p><h2>Cuéntanos sobre ti.</h2></div><p>Las preguntas se adaptarán al currículum que elegiste.</p></div><div class="question-intro" id="questionIntro"><strong>Elige un diseño para comenzar.</strong><span>Aquí aparecerá el formulario adaptado.</span></div><form id="cvForm" class="cv-form" novalidate></form><div class="form-actions" id="formActions" hidden><button class="btn btn-outline" type="button" id="backToStyles">Cambiar diseño</button><button class="btn btn-gold" type="button" id="saveDraft">Guardar avance</button><button class="btn btn-gold" type="button" id="continuePreview">Continuar a previsualización</button></div></section>
+<section class="cv-security-note"><div><span>◈</span><strong>Tu información se mantiene separada del diseño.</strong><p>Podrás cambiar de plantilla sin volver a contestar el formulario. La previsualización llevará una marca de agua antes del pago.</p></div><a href="plantillas.html">Volver a Plantillas →</a></section>
+</main>
+<footer class="site-footer"><div><strong>LumiWord Creaciones</strong><p>Inspiración · Creación · Propósito</p></div><div class="footer-links"><a href="index.html">Inicio</a><a href="editorial.html">Editorial</a><a href="plantillas.html">Plantillas</a><a href="index.html#contacto">Contacto</a></div><p class="copyright">© <span id="year"></span> LumiWord Creaciones. Todos los derechos reservados.</p></footer>
+<script src="js/app.js"></script><script src="js/curriculum.js"></script><script src="assets/curriculum/catalogo-disenos.js"></script><script src="js/curriculum-catalogo.js"></script>
+</body></html>
