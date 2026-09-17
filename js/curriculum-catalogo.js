@@ -34,6 +34,30 @@ document.addEventListener("DOMContentLoaded", function () {
       return '<div class="cv-sample-window"><div class="cv-real cv-executive-premium"><div class="ep-frame"><header class="ep-head"><div class="ep-kicker">EXECUTIVE CURRICULUM</div><div class="ep-name">NOMBRE<br><span>APELLIDO</span></div><div class="ep-role">DIRECCIÓN · ESTRATEGIA</div><div class="ep-photo">FOTO</div></header><div class="ep-content"><section>' + profile + exp + edu + '</section><aside>' + contact + skills + langs + '</aside></div></div></div></div>';
     }
 
+    if (d.id === "TPL-01-05") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-ats-sobrio"><header><div class="as-kicker">CURRÍCULUM VITAE</div><div class="as-name">NOMBRE APELLIDO</div><div class="as-role">PROFESIÓN / ESPECIALIDAD</div><div class="as-contact">Managua, Nicaragua · +000 0000 0000 · correo@ejemplo.com · LinkedIn</div></header><div class="as-rule"></div>' + profile + exp + edu + skills + '</div></div>';
+    }
+    if (d.id === "TPL-02-01") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-corp-trad"><header><div class="ct-band"></div><div class="ct-name">NOMBRE<br>APELLIDO</div><div class="ct-role">CARGO PROFESIONAL</div><div class="ct-contact">+000 0000 0000<br>correo@ejemplo.com<br>Managua, Nicaragua</div></header><div class="ct-body"><aside>' + contact + skills + '</aside><main>' + profile + exp + edu + '</main></div></div></div>';
+    }
+    if (d.id === "TPL-02-02") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-corp-moderno"><header><div class="cm-accent"></div><div class="cm-photo">FOTO</div><div><div class="cm-name">NOMBRE APELLIDO</div><div class="cm-role">PROFESIONAL · GESTIÓN · ESTRATEGIA</div></div></header><div class="cm-body"><aside>' + contact + langs + '</aside><main>' + profile + exp + edu + '</main></div></div></div>';
+    }
+    if (d.id === "TPL-02-03") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-corp-ats"><header><div class="ca-name">NOMBRE APELLIDO</div><div class="ca-role">ESPECIALISTA PROFESIONAL</div><p>Managua, Nicaragua · +000 0000 0000 · correo@ejemplo.com</p></header><div class="ca-columns"><main>' + profile + exp + edu + '</main><aside>' + skills + langs + '</aside></div></div></div>';
+    }
+    if (d.id === "TPL-02-04") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-corp-compact"><header><div class="cc-photo">FOTO</div><div><div class="cc-name">NOMBRE APELLIDO</div><div class="cc-role">PROFESIONAL</div></div></header><div class="cc-grid"><main>' + profile + exp + '</main><aside>' + contact + skills + edu + '</aside></div></div></div>';
+    }
+    if (d.id === "TPL-02-05") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-corp-international"><header><div><div class="ci-name">NOMBRE APELLIDO</div><div class="ci-role">INTERNATIONAL PROFESSIONAL</div></div>' + photo + '</header><div class="ci-body"><aside>' + langs + skills + '</aside><main>' + profile + exp + edu + '</main></div><footer>SPANISH · ENGLISH · INTERNATIONAL PROFILE</footer></div></div>';
+    }
+    if (d.id === "TPL-03-01") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-academic-trad"><header><div class="at-name">NOMBRE APELLIDO</div><div class="at-role">DOCENTE · INVESTIGADOR</div><p>Universidad / Institución · Ciudad, País · correo@ejemplo.com</p></header><div class="at-rule"></div>' + profile + edu + exp + '<div class="at-publications"><h5>PUBLICACIONES Y CONGRESOS</h5><p>Artículos, ponencias y producción académica.</p></div></div></div>';
+    }
+    if (d.id === "TPL-03-02") {
+      return '<div class="cv-sample-window"><div class="cv-real cv-academic-research"><header><div class="ar-photo">FOTO</div><div><div class="ar-name">NOMBRE APELLIDO</div><div class="ar-role">INVESTIGADOR</div><div class="ar-line">Educación · Investigación · Desarrollo</div></div></header><div class="ar-body"><aside>' + contact + langs + '</aside><main><div class="ar-timeline"><span>2024</span><strong>Proyecto de investigación</strong><p>Descripción breve del proyecto y resultados.</p><span>2021</span><strong>Investigador / Universidad</strong><p>Experiencia académica y científica.</p><span>2018</span><strong>Formación especializada</strong><p>Doctorado / Maestría / Especialidad.</p></div><div class="ar-publications"><h5>PUBLICACIONES</h5><p>Revistas · Congresos · Proyectos · Dirección académica</p></div></main></div></div></div>';
+    }
     var layouts = {
       "split-gold":"layout-split-gold", "dark-header":"layout-dark-header", "asymmetry":"layout-asymmetry",
       "luxury-frame":"layout-luxury-frame", "ats-clean":"layout-ats-clean", "navy-band":"layout-navy-band",
