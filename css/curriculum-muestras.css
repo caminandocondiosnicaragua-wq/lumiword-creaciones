@@ -196,3 +196,126 @@
 .cv-academic-research{border-left:8px solid #213d36;box-sizing:border-box}
 .cv-academic-research header{padding-left:11px!important}
 .cv-academic-research .ar-research-body aside:before{content:"CV";display:block;font:700 18px Georgia,serif;color:#213d36;border-bottom:2px solid #b08a45;padding-bottom:7px;margin-bottom:9px}
+
+
+/* =========================================================
+   DIRECCIÓN DE ARTE PREMIUM — CONCEPTOS 05–12
+   No son variaciones de color: cambia composición, ritmo
+   visual, jerarquía y arquitectura de cada CV.
+   ========================================================= */
+.premium-window{background:#e8e3dc!important;padding:22px!important;height:470px!important}
+.premium-window .cv-real{box-sizing:border-box}
+
+.cv-ats-sobrio.premium-ats{height:418px;background:#fff;padding:25px 25px;font-family:Arial,sans-serif;color:#202020}
+.premium-ats header{border-left:5px solid #222;padding-left:13px}
+.premium-ats .ats-kicker{font-size:5px;letter-spacing:.22em;color:#777;margin-bottom:8px}
+.premium-ats .ats-name{font-size:22px;font-weight:700;letter-spacing:-.03em}
+.premium-ats .ats-role{font-size:6px;text-transform:uppercase;letter-spacing:.13em;margin-top:5px;color:#555}
+.premium-ats .ats-contact{font-size:5px;color:#666;margin-top:8px}
+.premium-ats .ats-rule{height:1px;background:#222;margin:13px 0}
+.premium-ats section{margin-bottom:10px}
+.premium-ats h5{font-size:5.8px;letter-spacing:.12em;margin:0 0 5px;color:#222}
+.premium-ats p{font-size:5.3px;line-height:1.5;color:#555;margin:0}
+.premium-ats .ats-job{margin-bottom:7px}
+.premium-ats .ats-job b{display:block;font-size:6.2px}
+.premium-ats .ats-job span{display:block;font-size:4.8px;color:#777;margin:2px 0}
+.premium-ats .ats-job p{font-size:5px}
+
+.corp-command{height:418px;background:#fff;font-family:Arial,sans-serif}
+.cc-banner{height:102px;background:#173b5e;color:#fff;padding:20px 19px;box-sizing:border-box;position:relative}
+.cc-banner span{display:block;color:#d6ae63;font-size:5px;letter-spacing:.2em;margin-bottom:7px}
+.cc-banner strong{display:block;font:700 24px/.85 Georgia,serif;letter-spacing:-.035em}
+.cc-banner em{display:block;color:#d6dfe5;font-size:5.5px;letter-spacing:.13em;font-style:normal;margin-top:8px}
+.cc-strip{height:28px;background:#d8aa55;display:flex;align-items:center;justify-content:space-around;color:#173b5e;font-size:5px;font-weight:700;letter-spacing:.08em}
+.cc-command-body{display:grid;grid-template-columns:1fr 82px;height:288px}
+.cc-command-body main{padding:14px 16px}
+.cc-command-body aside{background:#eef2f5;padding:14px 9px}
+.cc-command-body aside .cv-mini-section{margin-bottom:12px}
+.cc-command-body main .cv-main-section{margin-bottom:10px}
+.cc-command-body main h5{color:#173b5e;border-bottom:1px solid #d9dee2;padding-bottom:4px}
+
+.corp-modular{height:418px;background:#f7f7f5;font-family:Arial,sans-serif}
+.corp-modular header{height:88px;background:#fff;padding:17px 18px;display:flex;gap:12px;align-items:center;border-bottom:1px solid #d8d8d5}
+.cm-index{width:35px;height:35px;border:1px solid #b28a4c;display:grid;place-items:center;color:#b28a4c;font:700 12px Georgia}
+.cm-kicker{font-size:5px;letter-spacing:.2em;color:#888}
+.cm-name{font:700 21px Georgia,serif;color:#202c35;margin-top:4px}
+.cm-role{font-size:5px;color:#547083;letter-spacing:.1em;margin-top:5px}
+.cm-dashboard{padding:10px;display:grid;grid-template-columns:1.35fr .65fr;grid-template-rows:112px 180px;gap:8px}
+.cm-dashboard>div{background:#fff;border:1px solid #e3e2df;padding:9px;box-sizing:border-box;overflow:hidden}
+.cm-dashboard .cv-main-section{margin-bottom:7px}
+.cm-dashboard h5{font-size:5.5px;margin-bottom:4px;color:#304f63}
+.cm-dashboard p,.cm-dashboard strong,.cm-dashboard small{font-size:4.8px!important}
+.cm-profile{grid-column:1/3}
+.cm-skills{grid-column:2}
+.cm-education{grid-column:1}
+.cm-experience{grid-column:1;grid-row:2}
+
+.ats-premium{height:418px;background:#fff;padding:22px 24px;font-family:Arial,sans-serif}
+.ats-premium header{border-bottom:3px solid #203d57;padding-bottom:9px}
+.ats-premium .ats-topline{font-size:5px;letter-spacing:.2em;color:#526777}
+.ats-premium .ats-name{font-size:22px;font-weight:700;margin-top:5px}
+.ats-premium .ats-role{font-size:5.8px;color:#526777;margin-top:4px}
+.ats-premium header p{font-size:5px;color:#777;margin:5px 0 0}
+.ats-columns{display:grid;grid-template-columns:1.5fr .75fr;gap:13px;padding-top:10px}
+.ats-columns>section{border-left:1px solid #d8dde0;padding-left:10px}
+.ats-columns h5{font-size:5.5px;letter-spacing:.12em}
+.ats-columns p,.ats-columns strong,.ats-columns small{font-size:4.9px!important}
+
+.corp-compact-premium{height:418px;background:#f4f2ee;padding:18px;font-family:Arial,sans-serif}
+.corp-compact-premium header{height:66px;display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:center}
+.compact-number{font:700 25px Georgia;color:#a77932}
+.compact-name{font:700 20px Georgia;color:#263746}
+.compact-role{font-size:5px;color:#777;letter-spacing:.12em;margin-top:5px}
+.compact-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:8px}
+.compact-metrics div{background:#263746;color:#fff;padding:8px 5px;text-align:center}
+.compact-metrics b{display:block;font:700 14px Georgia;color:#e0bb77}
+.compact-metrics span{font-size:4px;letter-spacing:.12em}
+.compact-body{display:grid;grid-template-columns:1.35fr .65fr;gap:8px}
+.compact-body main,.compact-body aside{background:#fff;padding:9px;min-height:265px;box-sizing:border-box}
+.compact-body aside{background:#ebe7df}
+.compact-body h5{font-size:5.5px}
+.compact-body p,.compact-body strong,.compact-body small{font-size:4.9px!important}
+
+.corp-global{height:418px;background:#fff;font-family:Arial,sans-serif}
+.corp-global header{height:92px;background:#203b4b;color:#fff;padding:18px;display:flex;gap:12px;align-items:center}
+.global-code{border:1px solid #d9b36c;padding:7px 6px;color:#d9b36c;font-size:5px;letter-spacing:.12em;text-align:center}
+.global-name{font:700 23px Georgia}
+.global-role{font-size:5px;color:#d8e1e5;letter-spacing:.13em;margin-top:6px}
+.global-langs{height:24px;background:#d9b36c;display:flex;align-items:center;justify-content:space-around;font-size:4.7px;font-weight:700;color:#203b4b}
+.global-body{display:grid;grid-template-columns:1fr 86px;height:270px}
+.global-body main{padding:13px 15px}
+.global-body aside{background:#f0f3f4;padding:13px 9px}
+.global-body h5{font-size:5.5px}
+.global-body p,.global-body strong,.global-body small{font-size:4.9px!important}
+.corp-global footer{height:32px;background:#203b4b;color:#d9b36c;text-align:center;padding-top:10px;box-sizing:border-box;font-size:4.5px;letter-spacing:.12em}
+
+.academic-scholar-premium{height:418px;background:#fbfaf6;padding:20px 22px;font-family:Georgia,serif}
+.academic-scholar-premium header{border-bottom:2px solid #596f7c;padding-bottom:9px}
+.acad-label{font:700 5px Arial;color:#687984;letter-spacing:.2em}
+.acad-name{font:700 23px Georgia;color:#263d4d;margin-top:5px}
+.acad-role{font:700 5.5px Arial;color:#687984;letter-spacing:.12em;margin-top:5px}
+.academic-scholar-premium header p{font:5px Arial;color:#777;margin:5px 0 0}
+.acad-nav{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #d9d5cd;margin-bottom:10px}
+.acad-nav span{font:700 4.3px Arial;color:#a0783e;padding:7px 2px;text-align:center}
+.academic-scholar-premium main h5{font:700 5.7px Arial;color:#263d4d;letter-spacing:.1em}
+.academic-scholar-premium main p,.academic-scholar-premium main strong,.academic-scholar-premium main small{font-size:4.9px!important}
+
+.research-premium{height:418px;background:#fff;font-family:Arial,sans-serif}
+.research-premium header{height:82px;background:#eef3f0;padding:17px 18px;display:flex;gap:13px;align-items:center;border-left:6px solid #2e7656}
+.research-mark{width:37px;height:44px;background:#2e7656;color:#fff;text-align:center;padding-top:5px;box-sizing:border-box;font:700 15px Georgia}
+.research-mark small{font:700 5px Arial}
+.research-name{font:700 21px Georgia;color:#244738}
+.research-role{font-size:5px;color:#397158;letter-spacing:.13em;margin-top:5px}
+.research-grid{display:grid;grid-template-columns:1fr 82px;height:336px}
+.research-grid main{padding:14px 14px}
+.research-grid aside{background:#f1f4f2;padding:14px 9px}
+.research-timeline>div{border-left:2px solid #9fbea9;padding-left:9px;margin-bottom:11px;position:relative}
+.research-timeline>div:before{content:"";position:absolute;left:-5px;top:0;width:7px;height:7px;background:#2e7656;border-radius:50%}
+.research-timeline b{font-size:5px;color:#2e7656;display:block}
+.research-timeline strong{font-size:6px;display:block;margin-top:2px}
+.research-timeline p{font-size:4.8px;color:#666;line-height:1.4;margin:3px 0 0}
+.research-pubs{margin-top:14px;border-top:1px solid #a9bdb1;padding-top:7px;font-size:5px;color:#397158;line-height:1.5}
+.research-pubs b{font-size:5px;color:#333}
+
+@media(max-width:900px){.marketplace-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.marketplace-grid{grid-template-columns:1fr}.cv-sample-window{height:450px}}
