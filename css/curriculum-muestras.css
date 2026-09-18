@@ -574,3 +574,123 @@
 .x19 p,.x19 b,.x19 span,.x19 small,.x20 p,.x20 b,.x20 span,.x20 small,.x21 p,.x21 b,.x21 span,.x21 small,
 .x22 p,.x22 b,.x22 span,.x22 small,.x23 p,.x23 b,.x23 span,.x23 small,.x24 p,.x24 b,.x24 span,.x24 small,
 .x25 p,.x25 b,.x25 span,.x25 small{font-family:Arial,sans-serif}
+
+
+/* =========================================================
+   DIRECCIÓN DE ARTE · SEGUNDA RONDA
+   Más impacto, contraste y elementos de firma.
+   ========================================================= */
+.cv-real.x13,.cv-real.x14,.cv-real.x15,.cv-real.x16,.cv-real.x17,.cv-real.x18,.cv-real.x19,.cv-real.x20,.cv-real.x21,.cv-real.x22,.cv-real.x23,.cv-real.x24,.cv-real.x25{
+  --accent:var(--cv-accent,#b58a3a);
+}
+
+/* 13 — ACADEMIC MODERN SIGNATURE */
+.x13{border-top-color:var(--accent);position:relative}
+.x13:after{content:"ACADEMIC";position:absolute;right:-16px;top:108px;writing-mode:vertical-rl;font-size:4px;letter-spacing:.35em;color:#c7c0b4;opacity:.9}
+.x13 header{background:linear-gradient(135deg,#163642 0%,#285766 68%,#314f55 100%)}
+.x13 header>b{color:var(--accent)}
+.x13body aside{border-left-color:var(--accent)}
+.xfeature{border-left-color:var(--accent);box-shadow:inset 0 0 0 1px #ded4c4}
+
+/* 14 — EUROPEAN EDITORIAL */
+.x14{border-top-color:var(--accent);position:relative}
+.x14:before{content:"CV";position:absolute;right:22px;top:18px;font:700 39px Georgia;color:#e8e1d6;line-height:1}
+.x14 header{position:relative;z-index:1}
+.x14 header em{color:var(--accent)}
+.x14grid aside{border-top:3px solid var(--accent)}
+.x14grid h5{border-bottom-color:var(--accent)}
+
+/* 15 — RESEARCH / DATA */
+.x15 header{background:linear-gradient(120deg,#1d3a32,#2d5548)}
+.x15 header{border-bottom-color:var(--accent)}
+.x15body aside{border-right-color:var(--accent);position:relative}
+.x15body aside:before{content:"RESEARCH";position:absolute;top:7px;left:8px;font-size:3.5px;letter-spacing:.25em;color:#718078}
+.x15body aside strong{margin-top:16px}
+.x15body main h5{border-bottom-color:var(--accent)}
+.x15body main:before{content:"ACADEMIC RECORD";display:block;font-size:3.7px;letter-spacing:.25em;color:#a39a8b;margin-bottom:5px}
+
+/* 16 — CREATIVE EDITORIAL */
+.x16{background:linear-gradient(135deg,#f8f0e6,#f1e5d6)}
+.xvert{background:#202f3f;color:var(--accent)}
+.x16 header{border-bottom-color:var(--accent)}
+.x16 header:after{content:"01";float:right;font:700 32px Georgia;color:#d8c4aa;margin-top:-18px}
+.xlead{border-left-color:var(--accent);background:#fff9f1;box-shadow:8px 8px 0 #e4d4c2}
+
+/* 17 — NOIR AGENCY */
+.x17{border-left:5px solid var(--accent);position:relative}
+.x17:before{content:"CREATIVE";position:absolute;right:13px;bottom:12px;font-size:3.5px;letter-spacing:.4em;color:#66727a}
+.x17 nav{background:var(--accent)}
+.x17body aside{border-left:2px solid var(--accent)}
+.x17body h5{color:var(--accent)}
+
+/* 18 — VISUAL DESIGN */
+.x18{position:relative;overflow:hidden}
+.x18:before{content:"";position:absolute;width:75px;height:75px;border:1px solid var(--accent);border-radius:50%;left:-35px;bottom:38px}
+.xorb{border-color:#d8c3d7}
+.x18body main{border-left-color:var(--accent)}
+.xindex{color:var(--accent)}
+
+/* 19 — MAGAZINE */
+.x19{position:relative}
+.x19:before{content:"PORTFOLIO";position:absolute;right:-1px;top:118px;writing-mode:vertical-rl;font-size:3.5px;letter-spacing:.35em;color:#a99b89}
+.x19 header{border-bottom-color:#222}
+.x19feature{border-bottom-color:var(--accent)}
+.x19body aside{border-top:3px solid var(--accent)}
+
+/* 20 — CREATIVE FRAME */
+.x20{background:#faf8f4}
+.xframe{border:1px solid var(--accent)}
+.x20 header{border-bottom-color:var(--accent)}
+.xquote{border-bottom-color:var(--accent);background:linear-gradient(90deg,#f4eee5,#fff);padding-left:8px}
+.x20 .xphoto{border-color:var(--accent)}
+
+/* 21 — MINIMAL ATELIER */
+.x21{position:relative}
+.x21:after{content:"LUMIWORD / SIGNATURE";position:absolute;bottom:9px;right:24px;font-size:3.5px;letter-spacing:.2em;color:#aaa093}
+.x21 header>b{border-color:var(--accent);color:var(--accent)}
+.x21 hr{border-top-color:var(--accent)}
+.x21 aside{border-left-color:#d9d2c8}
+
+/* 22 — MINIMAL SCULPTURAL */
+.x22{position:relative;overflow:hidden}
+.x22:after{content:"02";position:absolute;right:22px;bottom:18px;font:700 28px Georgia;color:#d8d0c6}
+.x22 main h5{color:#61594f}
+.x22cols{border-top-color:var(--accent)}
+.x22cols section+section{border-left-color:#d0c9c0}
+
+/* 23 — MINIMAL NEWSPAPER */
+.x23{position:relative}
+.x23:before{content:"THE PROFESSIONAL CV";position:absolute;right:22px;top:10px;font-size:3.5px;letter-spacing:.25em;color:#8b8278}
+.x23 header{border-top-color:var(--accent)}
+.x23lead{border-bottom-color:var(--accent)}
+.x23lead b{color:var(--accent)}
+.x23 footer{border-top-color:#222}
+
+/* 24 — ORGANIC MINIMAL */
+.x24{position:relative}
+.x24:before{content:"";position:absolute;right:18px;top:85px;width:38px;height:1px;background:var(--accent);transform:rotate(-25deg)}
+.x24 header{border-bottom-color:var(--accent)}
+.x24 main h5{color:var(--accent)}
+
+/* 25 — LUXURY SIGNATURE */
+.x25{position:relative}
+.x25:after{content:"25";position:absolute;right:24px;bottom:14px;font:700 34px Georgia;color:#e5ddd1}
+.x25 header{border-bottom-color:var(--accent)}
+.x25grid aside{border-left-color:var(--accent)}
+.xstatement{border-left:3px solid var(--accent);padding-left:9px}
+
+/* Photo areas: elegant placeholder, never a fake person */
+.x13 .xphoto,.x16 .xphoto,.x17 .xphoto,.x18 .xphoto,.x19 .xphoto,.x20 .xphoto{
+  position:relative;background:repeating-linear-gradient(135deg,#f4efe7 0,#f4efe7 5px,#ebe3d7 5px,#ebe3d7 6px);
+}
+.x13 .xphoto:after,.x16 .xphoto:after,.x17 .xphoto:after,.x18 .xphoto:after,.x19 .xphoto:after,.x20 .xphoto:after{
+  content:"PHOTO";font-size:3.5px;letter-spacing:.15em;color:#9d907f;
+}
+
+/* Make the mini documents read as designed pages, not loose text */
+.x13 section,.x14grid section,.x15 section,.x16body section,.x17body section,.x18body section,.x19body section,.x20body section,.x21 main section,.x22 main section,.x23body section,.x24 main section,.x25grid section{
+  position:relative;
+}
+.x13 section h5,.x14 h5,.x15 h5,.x16body h5,.x17body h5,.x18body h5,.x19body h5,.x20body h5,.x21 main h5,.x22 main h5,.x23body h5,.x24 main h5,.x25grid h5{
+  text-transform:uppercase;
+}
