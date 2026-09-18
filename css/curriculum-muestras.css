@@ -48,3 +48,18 @@
 .cv-academic-trad{padding:23px 25px}.at-name{font:700 19px Georgia,serif}.at-role{font-size:5px;letter-spacing:1px;margin:6px 0}.cv-academic-trad header p{font-size:5px;color:#777}.at-rule{border-top:3px double #526879;margin:13px 0}.cv-academic-trad .cv-main-section{margin-bottom:10px}.at-publications{border-top:1px solid #cbd2d7;margin-top:8px;padding-top:9px}.at-publications h5{font-size:5px;letter-spacing:1px}
 
 .cv-academic-research header{height:91px;background:#eef3f6;display:flex;align-items:center;padding:14px 17px}.ar-photo{width:55px;height:62px;background:#fff;border:1px solid #9aaab5;display:flex;align-items:center;justify-content:center;margin-right:13px;font-size:5px}.ar-name{font:700 17px Georgia,serif;color:#26384d}.ar-role{font-size:5px;letter-spacing:1px;margin-top:5px}.ar-line{font-size:5px;color:#71808b;margin-top:5px}.ar-body{display:grid;grid-template-columns:76px 1fr;height:327px}.cv-academic-research aside{background:#26384d;color:#fff;padding:13px 8px}.cv-academic-research main{padding:14px 15px}.ar-timeline{border-left:2px solid #b17b20;padding-left:10px}.ar-timeline span{display:block;color:#b17b20;font-weight:700;font-size:6px;margin-bottom:2px}.ar-timeline strong{display:block;font-size:6px}.ar-timeline p{margin:3px 0 10px;line-height:1.3}.ar-publications{border-top:1px solid #d4d9dc;padding-top:9px}.ar-publications h5{font-size:5px;letter-spacing:1px}
+
+/* PALETA DINÁMICA — la estructura permanece, cambia el acento */
+.color-preview .ec-main header{border-bottom-color:var(--cv-accent)!important}
+.color-preview .ec-role,.color-preview .ec-sidebar h6{color:var(--cv-accent)!important}
+.color-preview .e2-top{border-bottom-color:var(--cv-accent)!important}
+.color-preview .e2-role{color:var(--cv-accent)!important}
+.color-preview .ep-frame{border-color:var(--cv-accent)!important}
+.color-preview .ep-role,.color-preview .ep-kicker{color:var(--cv-accent)!important}
+.color-preview .em-role{color:var(--cv-accent)!important}
+.color-preview .em-header{border-bottom:4px solid var(--cv-accent)!important}
+.color-preview .cv-design-head{border-left-color:var(--cv-accent)!important}
+.color-preview .cv-design-side{border-left-color:var(--cv-accent)!important}
+.color-preview .cv-design-ats{border-bottom-color:var(--cv-accent)!important}
+.color-preview .cv-design-international{border-bottom-color:var(--cv-accent)!important}
+.color-preview .cv-design-research{border-left-color:var(--cv-accent)!important}
