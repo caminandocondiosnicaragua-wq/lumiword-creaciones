@@ -694,3 +694,97 @@
 .x13 section h5,.x14 h5,.x15 h5,.x16body h5,.x17body h5,.x18body h5,.x19body h5,.x20body h5,.x21 main h5,.x22 main h5,.x23body h5,.x24 main h5,.x25grid h5{
   text-transform:uppercase;
 }
+
+
+/* =========================================================
+   AJUSTE DE PROPORCIONES · NOMBRES Y DISTRIBUCIÓN
+   ========================================================= */
+
+/* Los nombres no deben dominar la página: el contenido profesional
+   necesita respirar y conservar espacio para experiencia/educación. */
+.x13 header strong{font-size:18px;line-height:.9}
+.x14 header strong{font-size:22px;line-height:.88}
+.x15 header strong{font-size:19px;line-height:.9}
+.x16 header strong{font-size:23px;line-height:.82}
+.x17 header strong{font-size:19px;line-height:.88}
+.x18 header strong{font-size:24px;line-height:.82}
+.x19 header strong{font-size:23px;line-height:.84}
+.x20 header strong{font-size:20px;line-height:.9}
+.x21 header strong{font-size:19px;line-height:.9}
+.x22 header strong{font-size:24px;line-height:.82}
+.x23 header strong{font-size:22px;line-height:.86}
+.x24 header strong{font-size:23px;line-height:.84}
+.x25 header strong{font-size:24px;line-height:.86}
+
+/* Menos altura desperdiciada en cabeceras */
+.x13 header{height:74px;padding:12px 17px}
+.x15 header{height:70px;padding:12px 18px}
+.x16 header{padding-bottom:10px}
+.x17 header{height:76px;padding:13px 18px}
+.x18 header strong{margin-top:2px}
+.x19 header{padding-bottom:8px}
+.x20 header{padding:7px 10px 10px}
+.x21 header{grid-template-columns:29px 1fr 72px}
+.x22 header strong{margin:5px 0}
+.x23 header{padding-top:8px}
+.x24 header{padding-bottom:9px}
+.x25 header{padding:9px 0}
+
+/* 17 · Creativo moderno: NO fondo negro.
+   Conservamos el carácter de agencia mediante azul petróleo,
+   dorado y contraste tipográfico. */
+.x17{
+  background:#f7f4ee;
+  color:#26343c;
+  border-left:5px solid var(--accent);
+}
+.x17 header{
+  background:#243f4b;
+  color:#fff;
+}
+.x17 header strong{color:#fff}
+.x17 nav{
+  background:var(--accent);
+  color:#fff;
+}
+.x17body{
+  background:#f7f4ee;
+}
+.x17body main{
+  color:#26343c;
+}
+.x17body aside{
+  background:#e8edf0;
+  border-left:0;
+  border-right:2px solid var(--accent);
+  color:#26343c;
+}
+.x17body i,.x17body h5{color:#8b6424}
+.x17 .xphoto{
+  background:#f3eee5;
+  border-color:var(--accent);
+}
+.x17:before{color:#9b9082}
+
+/* Mejor reparto vertical: la información empieza antes y ocupa más */
+.x13body,.x15body,.x17body{height:343px}
+.x16body{margin-top:11px}
+.x18body{margin-top:21px}
+.x19body{padding-top:9px}
+.x20body{padding-top:11px}
+.x22 main{margin-top:18px}
+.x24 main{padding-top:11px}
+.x25grid{gap:15px}
+
+/* Evitar que los títulos de muestra rompan innecesariamente */
+.x13 header strong,.x14 header strong,.x15 header strong,.x16 header strong,
+.x17 header strong,.x18 header strong,.x19 header strong,.x20 header strong,
+.x21 header strong,.x22 header strong,.x23 header strong,.x24 header strong,
+.x25 header strong{
+  max-width:190px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* La tarjeta del catálogo debe mostrar el documento, no un bloque vacío */
+.cv-sample-window{overflow:hidden}
