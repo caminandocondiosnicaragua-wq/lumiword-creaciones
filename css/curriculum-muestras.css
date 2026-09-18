@@ -319,3 +319,95 @@
 
 @media(max-width:900px){.marketplace-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.marketplace-grid{grid-template-columns:1fr}.cv-sample-window{height:450px}}
+
+
+/* =========================================================
+   FORMATO REAL DE PREVISUALIZACIÓN — CARTA US LETTER
+   8.5 × 11 pulgadas → proporción 0.7727
+   La miniatura mantiene esta proporción visual.
+   ========================================================= */
+.cv-sample-window{
+  height:470px;
+  padding:18px;
+  align-items:flex-start;
+}
+.cv-sheet,
+.cv-real.cv-executive-classic,
+.cv-real.cv-executive-modern,
+.cv-real.cv-executivo-two,
+.cv-real.cv-executive-premium,
+.cv-real.cv-ats-sobrio,
+.cv-real.cv-corp-trad,
+.cv-real.cv-corp-moderno,
+.cv-real.cv-corp-ats,
+.cv-real.cv-corp-compact,
+.cv-real.cv-corp-international,
+.cv-real.cv-academic-trad,
+.cv-real.cv-academic-research,
+.cv-real.cv-academic-modern,
+.cv-real.cv-academic-european,
+.cv-real.cv-academic-detailed,
+.cv-real.cv-creative-elegant,
+.cv-real.cv-creative-modern,
+.cv-real.cv-creative-visual,
+.cv-real.cv-creative-editorial,
+.cv-real.cv-creative-professional,
+.cv-real.cv-minimal-classic,
+.cv-real.cv-minimal-modern,
+.cv-real.cv-minimal-editorial,
+.cv-real.cv-minimal-compact,
+.cv-real.cv-minimal-premium{
+  width:322px;
+  height:417px;
+  aspect-ratio:8.5/11;
+}
+.cv-real.cv-executive-classic{grid-template-columns:100px 1fr}
+.ec-sidebar{padding:19px 13px}
+.ec-main{padding:25px 19px 18px}
+.cv-real.cv-executive-modern .em-header{height:118px}
+.cv-real.cv-executivo-two .e2-top{height:112px}
+.premium-window .cv-real{max-width:322px}
+.premium-window .cv-real.corp-command,
+.premium-window .cv-real.corp-modular,
+.premium-window .cv-real.ats-premium,
+.premium-window .cv-real.corp-compact-premium,
+.premium-window .cv-real.corp-global,
+.premium-window .cv-real.academic-scholar-premium,
+.premium-window .cv-real.research-premium,
+.premium-window .cv-real.premium-ats{
+  width:322px;
+  height:417px;
+}
+@media(max-width:600px){
+  .cv-sample-window{height:450px;padding:14px}
+  .cv-sheet,
+  .cv-real.cv-executive-classic,
+  .cv-real.cv-executive-modern,
+  .cv-real.cv-executivo-two,
+  .cv-real.cv-executive-premium,
+  .cv-real.cv-ats-sobrio,
+  .cv-real.cv-corp-trad,
+  .cv-real.cv-corp-moderno,
+  .cv-real.cv-corp-ats,
+  .cv-real.cv-corp-compact,
+  .cv-real.cv-corp-international,
+  .cv-real.cv-academic-trad,
+  .cv-real.cv-academic-research,
+  .cv-real.cv-academic-modern,
+  .cv-real.cv-academic-european,
+  .cv-real.cv-academic-detailed,
+  .cv-real.cv-creative-elegant,
+  .cv-real.cv-creative-modern,
+  .cv-real.cv-creative-visual,
+  .cv-real.cv-creative-editorial,
+  .cv-real.cv-creative-professional,
+  .cv-real.cv-minimal-classic,
+  .cv-real.cv-minimal-modern,
+  .cv-real.cv-minimal-editorial,
+  .cv-real.cv-minimal-compact,
+  .cv-real.cv-minimal-premium,
+  .premium-window .cv-real{
+    width:322px;
+    height:417px;
+  }
+}
