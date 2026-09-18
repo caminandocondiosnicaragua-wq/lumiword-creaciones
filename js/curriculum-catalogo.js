@@ -79,10 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var list = designs.filter(function (d) {
       var categoryKey = d.category.toLowerCase().replace(" minimalista premium", "");
       var typeOK = selectedType === "todos" || categoryKey === selectedType.toLowerCase();
-      var formatOK = selectedFormat === "todos" ||
-        (selectedFormat === "one-column" && d.columns === 1) ||
-        (selectedFormat === "two-columns" && d.columns === 2) ||
-        (selectedFormat === "ats" && d.ats);
+      var formatOK = selectedFormat === "todos" || (selectedFormat === "ats" && d.ats);
       return typeOK && formatOK;
     });
 
