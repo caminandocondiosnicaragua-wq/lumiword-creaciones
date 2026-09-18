@@ -122,11 +122,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (sortSelect) sortSelect.addEventListener("change", render);
 
+  var colorCustomizer = document.getElementById("colorCustomizer");
+  var colorPreview = document.getElementById("colorCustomizerPreview");
+  var currentDesign = null;
+  var currentColor = localStorage.getItem("lumiword_cv_color") || "#B58A3A";
+
+  function applyColor() {
+    if (!colorPreview) return;
+    colorPreview.style.setProperty("--cv-accent", currentColor);
+    document.querySelectorAll(".color-swatches button").forEach(function(b) {
+      b.classList.toggle("selected", b.getAttribute("data-color") === currentColor);
+    });
+  }
+
+  function openCustomizer(id) {
+    currentDesign = designs.find(function(d) { return d.id === id; });
+    if (!currentDesign || !colorCustomizer || !colorPreview) return;
+    colorPreview.innerHTML = sample(currentDesign);
+    applyColor();
+    colorCustomizer.hidden = false;
+    colorCustomizer.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   grid.addEventListener("click", function (event) {
     var button = event.target.closest(".use-design");
     if (!button) return;
     var card = button.closest(".market-card");
-    localStorage.setItem("lumiword_cv_diseno_seleccionado", card.getAttribute("data-design"));
+    openCustomizer(card.getAttribute("data-design"));
+  });
+
+  document.querySelectorAll(".color-swatches button").forEach(function(button) {
+    button.addEventListener("click", function() {
+      currentColor = button.getAttribute("data-color");
+      localStorage.setItem("lumiword_cv_color", currentColor);
+      applyColor();
+    });
+  });
+
+  document.getElementById("closeColorCustomizer")?.addEventListener("click", function() {
+    if (colorCustomizer) colorCustomizer.hidden = true;
+    document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
+  });
+
+  document.getElementById("confirmColorCustomizer")?.addEventListener("click", function() {
+    if (!currentDesign) return;
+    localStorage.setItem("lumiword_cv_diseno_seleccionado", currentDesign.id);
+    localStorage.setItem("lumiword_cv_color", currentColor);
     var form = document.getElementById("preguntas");
     if (form) {
       form.hidden = false;
