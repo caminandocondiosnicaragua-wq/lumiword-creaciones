@@ -77,7 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function render() {
     var list = designs.filter(function (d) {
-      var typeOK = selectedType === "todos" || d.category.toLowerCase() === selectedType.toLowerCase();
+      var categoryKey = d.category.toLowerCase().replace(" minimalista premium", "");
+      var typeOK = selectedType === "todos" || categoryKey === selectedType.toLowerCase();
       var formatOK = selectedFormat === "todos" ||
         (selectedFormat === "one-column" && d.columns === 1) ||
         (selectedFormat === "two-columns" && d.columns === 2) ||
